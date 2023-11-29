@@ -1,0 +1,15 @@
+twist_mux:
+  ros__parameters:
+    topics:
+      stoper:
+        topic   : cmd_vel_stop
+        timeout : 0.5
+        priority: 200
+      tracker:
+        topic   : cmd_vel_adjust
+        timeout : 0.5
+        priority: 50
+      teleop:
+        topic   : cmd_vel_teleop
+        timeout : 0.5
+        priority: 100
