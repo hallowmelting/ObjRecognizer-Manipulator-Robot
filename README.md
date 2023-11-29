@@ -1,17 +1,31 @@
-# Object Recognition 2-Axis Manipulator Factory Indoor Cleaning Robot 
+# 객체 인식 2축 매니퓰레이터 공장 실내 청소 로봇
 
-This repository includes all documentation and code related to a Robot Operating System (ROS2) Foxy based cleaning robot. The robot operates on a Raspberry Pi4 running Ubuntu 20.04. 
+이 레포지토리는 ROS2 Foxy 기반 청소 로봇에 대한 모든 코드를 포함하고 있습니다. 이 로봇은 Ubuntu 20.04가 설치된 Raspberry Pi4에서 작동합니다.
 
-## Overview
-The robot combines real-time object detection and picking functionality using a 2-axis manipulator. It uses a camera to recognize waste in its surroundings in real-time, utilizing the YOLOv8n model for object recognition. This allows it to pick up garbage with high precision and efficiency, contributing to maintaining a clean factory indoor environment. 
+## 개요
+이 로봇은 실시간 객체 감지 기능과 2축 매니퓰레이터를 사용한 물체 집기 기능을 결합합니다. 카메라를 이용하여 주변의 쓰레기를 실시간으로 인식하고, 객체 인식에는 YOLOv8n 모델을 사용합니다. 이를 통해 높은 정밀도와 효율성으로 쓰레기를 줍게 되어 공장 실내 청소에 크게 기여합니다.
 
-## Key Features 
+## 주요 기능
 
-- **Object Recognition:** Real-time object detection using YOLOv8n model through image-based data acquired from a camera. 
-- **Manipulator Functionality:** Integrated with a 2-axis manipulator to pick up recognized objects. 
-- **Platform:** Runs on Raspberry Pi4 with Ubuntu 20.04. Uses ROS2 Foxy for operation. 
+- **객체 인식:** 카메라로부터 얻은 이미지 기반 데이터를 이용한 YOLOv8n 모델을 사용한 실시간 객체 감지 기능
+- **몸체 조절:** YOLOv8n 모델에서 출력되는 좌표를 피드백으로 받아 실시간 모터 제어 
+- **매니퓰레이터 기능:** 인식한 객체를 집어 올리는 2축 매니퓰레이터가 통합되어 있습니다
 
-## Getting Started 
-To use this robot and understand its structure, one can follow the provided documentation to set up the environment on a Raspberry Pi4. The documentation includes step-by-step instructions for installation, usage, and necessary packages required. 
+## 시작하기
+이 로봇을 사용하고 구조를 이해하려면 제공되는 문서를 따라 Raspberry Pi4에서 환경을 설정하면 됩니다. 문서에는 설치 방법, 사용법, 필요한 패키지 정보 등이 단계별로 안내되어 있습니다.
 
-This project aims to contribute to the enhancement of automated cleaning efforts in factory environments. Contributions and suggestions are always welcome. 
+## 요구사항
+이 로봇을 사용하기 위해 필요한 주요 사양과 패키지는 다음과 같습니다:
+
+- **하드웨어:** Raspberry Pi4 model B 8GB
+- **운영체제:** Ubuntu 20.04
+- **프레임워크:** ROS2 Foxy
+- **이미지 처리:** YOLOv8n model
+- **카메라:** Raspberry Pi Camera Module 2
+- **추가 패키지:** 
+    - ros2_control
+    - ros2_controllers
+    - robot_state_publisher
+    - teleop_twist_keyboard
+    - twist_mux
+    - cartographer
