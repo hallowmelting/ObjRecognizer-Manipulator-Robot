@@ -331,22 +331,23 @@ void setup() {
    interval and check for auto-stop conditions.
 */
 void loop() {
-          
+          // 초음파 센서에 펄스를 보냄
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
     digitalWrite(trigPin, HIGH);
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW);
     
- 
+    // 초음파의 반사 시간을 측정
     duration = pulseIn(echoPin, HIGH);
     delay(5);
 
+    // 거리 계산 (시간 * 속도 = 거리)
     distance = duration * 0.034 / 2;
-
-    if (distance <= 20){
-    setMotorSpeeds(-80, -80);
-    delay(1500);
+// sonic wave sensor enable
+    if ((distance <= 33) && (distance >= 29)){
+    setMotorSpeeds(120, -120);
+    delay(4450);
     Serial.println("BACK");   
     }
     
@@ -390,39 +391,39 @@ void loop() {
     }
 
     
-    if(chr == 's'){
+    if(chr == 'a'){
       setMotorSpeeds(0,0);
-      delay(2000);
+      delay(1000);
       Serial.println("STOP");
     }
-    else if(chr == 'a'){
-      setMotorSpeeds(0,0);
-      delay(1000);
-      setMotorSpeeds(-50,50);
-      delay(800);
-      setMotorSpeeds(0,0);
-    }
-    else if(chr == 'b'){
-      setMotorSpeeds(0,0);
-      delay(1000);
-      setMotorSpeeds(50,-50);
-      delay(800);
-      setMotorSpeeds(0,0);
-    }
-    else if(chr == 'c'){
-      setMotorSpeeds(0,0);
-      delay(1000);
-      setMotorSpeeds(50,50);
-      delay(800);
-      setMotorSpeeds(0,0);
-    }
-    else if(chr == 'd'){
-      setMotorSpeeds(0,0);
-      delay(1000);
-      setMotorSpeeds(-80,-80);
-      delay(500);
-      setMotorSpeeds(0,0);
-    }
+//    else if(chr == 'a'){
+//      setMotorSpeeds(0,0);
+//      delay(1000);
+//      setMotorSpeeds(-50,50);
+//      delay(800);
+//      setMotorSpeeds(0,0);
+//    }
+//    else if(chr == 'b'){
+//      setMotorSpeeds(0,0);
+//      delay(1000);
+//      setMotorSpeeds(50,-50);
+//      delay(800);
+//      setMotorSpeeds(0,0);
+//    }
+//    else if(chr == 'c'){
+//      setMotorSpeeds(0,0);
+//      delay(1000);
+//      setMotorSpeeds(50,50);
+//      delay(800);
+//      setMotorSpeeds(0,0);
+//    }
+//    else if(chr == 'd'){
+//      setMotorSpeeds(0,0);
+//      delay(1000);
+//      setMotorSpeeds(-80,-80);
+//      delay(500);
+//      setMotorSpeeds(0,0);
+//    }
   }
   
 // If we are using base control, run a PID calculation at the appropriate intervals

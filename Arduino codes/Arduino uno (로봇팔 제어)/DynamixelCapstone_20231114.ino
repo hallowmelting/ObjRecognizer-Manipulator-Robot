@@ -249,11 +249,11 @@ if(Serial.available()){
   cmd = Serial.read();
 
   if(cmd == 'r'){
-   Serial.println("r");
+   Serial.println("rr");
    delay(2000);
    
 //////////////쓰레기 수거//////////////////
-ref_1[0] = 0x7A; // ID 101의 목표 각도 260
+ref_1[0] = 0x9D; // ID 101의 목표 각도 263
 ref_1[1] = 0x0B;
 dx_tx_packet_for_position_control(101, ref_1);
 
