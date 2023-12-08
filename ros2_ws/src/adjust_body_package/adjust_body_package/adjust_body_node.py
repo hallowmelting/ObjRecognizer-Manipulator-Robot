@@ -26,13 +26,13 @@ class CombinedNode(Node):
 
         self.declare_parameter("rcv_timeout_secs", 1.0)
         self.declare_parameter("angular_chase_multiplier", 2.0)
-        self.declare_parameter("forward_chase_speed", 0.4)
+        self.declare_parameter("forward_chase_multiplier", 0.4)
         self.declare_parameter("max_size_thresh", 200.0)
         self.declare_parameter("filter_value", 0.9)
         
         self.rcv_timeout_secs = self.get_parameter('rcv_timeout_secs').get_parameter_value().double_value
         self.angular_chase_multiplier = self.get_parameter('angular_chase_multiplier').get_parameter_value().double_value
-        self.forward_chase_speed = self.get_parameter('forward_chase_speed').get_parameter_value().double_value
+        self.forward_chase_multiplier = self.get_parameter('forward_chase_multiplier').get_parameter_value().double_value
         self.max_size_thresh = self.get_parameter('max_size_thresh').get_parameter_value().double_value
         self.filter_value = self.get_parameter('filter_value').get_parameter_value().double_value
 
@@ -50,7 +50,7 @@ class CombinedNode(Node):
         msg = Twist()
         if (time.time()- self.last_received_time < self.rcv_timeout_secs):
             if (self.target_y < self.max_size_thresh):
-                msg.linear.x = -self.forward_chase_speed * self.target_y
+                msg.linear.x = -self.forward_chase_multiplier * self.target_y
             msg.angular.z = -self.angular_chase_multiplier * self.target_x
         else:
             self.get_logger().info('Target lost')
