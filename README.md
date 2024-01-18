@@ -6,6 +6,9 @@
 ![ros2 control 개요](https://github.com/hallowmelting/ObjRecognizer-Manipulator-Robot/assets/40587712/5785ed03-baf6-4d9a-ad5f-9d74604b11cc)
 이 로봇은 실시간 객체 감지 기능과 2축 매니퓰레이터를 사용한 물체 집기 기능을 지원합니다. 카메라를 이용하여 주변의 쓰레기를 실시간으로 인식하고, 객체 인식에는 YOLOv8n 모델을 사용합니다. 이를 통해 높은 정밀도와 효율성으로 쓰레기를 줍게 되어 공장 실내 청소에 크게 기여합니다.
 
+## 노드 구상도
+![KakaoTalk_20231128_190947311](https://github.com/hallowmelting/ObjRecognizer-Manipulator-Robot/assets/40587712/dbaf137e-48c4-4e49-9993-1e9e9ac389b9)
+
 ## 주요 기능
 
 - **객체 인식:** 카메라로부터 얻은 이미지 기반 데이터를 이용한 YOLOv8n 모델을 사용한 실시간 객체 감지 기능
