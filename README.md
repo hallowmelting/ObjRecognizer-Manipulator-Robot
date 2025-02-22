@@ -1,9 +1,4 @@
 # 객체 인식 2축 매니퓰레이터 공장 실내 청소 로봇
-![IMG_2108](https://github.com/hallowmelting/ObjRecognizer-Manipulator-Robot/assets/40587712/9276569a-c92f-41af-a7cf-dd18a60347a7)
-
-https://github.com/hallowmelting/ObjRecognizer-Manipulator-Robot/assets/40587712/3b018aae-b8d2-47fc-892a-4990d7aebf03
-
-https://github.com/user-attachments/assets/dc58c6cd-8b31-48d4-b0c2-8721997bd435
 
 이 레포지토리는 ROS2 Foxy 기반 청소 로봇에 대한 모든 코드를 포함하고 있습니다. 이 소스코드는 Ubuntu 20.04가 설치된 Raspberry Pi4에서 작동합니다.
 
