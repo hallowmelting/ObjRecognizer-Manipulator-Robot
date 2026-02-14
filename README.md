@@ -1,3 +1,5 @@
+<img width="4032" height="2268" alt="KakaoTalk_20260214_145054326" src="https://github.com/user-attachments/assets/a22d01e1-a1ee-4a94-aecb-17de1fe3c7bf" />
+
 # 객체 인식 2축 매니퓰레이터 공장 실내 청소 로봇
 
 이 레포지토리는 ROS2 Foxy 기반 청소 로봇에 대한 모든 코드를 포함하고 있습니다. 이 소스코드는 Ubuntu 20.04가 설치된 Raspberry Pi4에서 작동합니다.
